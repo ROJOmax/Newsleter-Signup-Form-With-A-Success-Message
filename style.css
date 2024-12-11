@@ -1,0 +1,274 @@
+/* ------- CSS Reset ----------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+s img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button {
+    font: inherit;
+}
+
+p,
+h1,
+h2 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    --clr-primary-tomato: hsl(4, 100%, 67%);
+    --clr-Grey: hsl(231, 7%, 60%);
+    --clr-Charcoal-Grey: hsl(235, 18%, 26%);
+    --clr-Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --clr-background: hsl(0, 0%, 100%);
+
+    --font: 1rem;
+
+    --fw-rgl: 400;
+    --fw-bold: 700;
+
+    --ff: 'Roboto', sans-serif;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--clr-background);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(./assets/fonts/Roboto-Regular.ttf) format(truetype);
+    font-weight: var(--fw-rgl);
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--clr-Charcoal-Grey);
+    font-weight: var(--fw-rgl);
+    font-size: var(--font);
+    font-family: var(--ff);
+}
+
+.signup-form {
+    background-color: var(--clr-background);
+    max-width: 375px;
+    color: var(--clr-Dark-Slate-Grey);
+}
+
+.signup-form.success {
+    display: initial;
+    padding: 3.5rem;
+}
+
+.content {
+    padding: 1.5rem;
+}
+
+.signup-form h1 {
+    font-weight: var(--fw-bold);
+    font-size: 2.5rem;
+}
+
+.signup-form p {
+    margin: 1rem 0;
+}
+
+
+ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+ul li:not(:last-child) {
+    align-items: start;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item label {
+    font-size: 12px;
+    font-weight: var(--fw-bold);
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-item label .error-email {
+    color: var(--clr-primary-tomato);
+    display: none;
+}
+
+.form-item label .error-email.active {
+    display: block;
+}
+
+.form-item input,
+.form-item button {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.form-item input {
+    border: 1px solid var(--clr-Grey);
+}
+
+.form-item input.active {
+    background-color: rgba(255, 98, 87, 0.2);
+    border: 1px solid var(--clr-primary-tomato);
+}
+
+.btn1 {
+    background-color: var(--clr-Dark-Slate-Grey);
+    color: var(--clr-background);
+    font-weight: var(--fw-bold);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn1:hover,
+.btn2:hover {
+    background: linear-gradient(127deg, rgba(255, 63, 124, 1) 40%, rgb(229, 40, 15) 70%);
+}
+
+/* Sucess section */
+
+.successmsg {
+    max-width: 375px;
+    background-color: var(--clr-background);
+    padding: 2rem;
+    color: var(--clr-Dark-Slate-Grey);
+    display: none;
+}
+
+.successmsg.active {
+    display: block;
+}
+
+.successmsg img {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
+
+.successmsg h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: var(--fw-bold);
+}
+
+.successmsg p {
+    margin-bottom: 15rem;
+
+}
+
+.bold {
+    font-weight: var(--fw-bold);
+}
+
+.btn2 {
+    width: 100%;
+    background-color: var(--clr-Dark-Slate-Grey);
+    color: var(--clr-background);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+@media only screen and (min-width: 769px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signup-form {
+        max-width: 900px;
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 1rem;
+        border-radius: 1.5rem;
+    }
+
+    .signup-form.success {
+        display: block;
+        padding: initial;
+    }
+
+    .content {
+        margin: 2rem 0.5rem;
+    }
+
+    .content h1 {
+        font-size: 3.5rem;
+    }
+
+
+    /* success screen */
+
+    .successmsg {
+        max-width: 400px;
+        display: none;
+        border-radius: 1.5rem;
+    }
+
+    .successmsg.active {
+        max-width: 400px;
+        display: block;
+    }
+
+    .successmsg img {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .successmsg h1 {
+        margin-bottom: 1rem;
+
+    }
+
+    .successmsg p {
+        margin-bottom: 1rem;
+    }
+}
